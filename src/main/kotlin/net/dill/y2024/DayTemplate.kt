@@ -9,7 +9,7 @@ class DayTemplate {
         return 0
     }
 
-    fun part2(): Int? {
+    fun part2(): Int {
         return 0
     }
 

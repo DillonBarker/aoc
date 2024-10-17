@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "net.dill.y2024"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
