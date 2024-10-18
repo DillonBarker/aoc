@@ -1,19 +1,19 @@
-package net.dill.y2024
+package net.dill.y2018
 
 import org.junit.jupiter.api.Test
 
-internal class DayTemplateTest {
+internal class Day02Test {
     @Test
     fun `should solve part1`() {
-        val day00 = Day00()
+        val day = Day02()
 
         assert(true)
     }
 
     @Test
     fun `should solve part2`() {
-        val day00 = Day00()
+        val day = Day02()
 
-        assert(true)
+        assert(day.part2() == "fgij")
     }
 }

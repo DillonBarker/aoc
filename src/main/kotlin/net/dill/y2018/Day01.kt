@@ -1,9 +1,9 @@
-package net.dill.y2024
+package net.dill.y2018
 
 import net.dill.resourceLines
 
-class Day00 {
-    private val data by lazy { resourceLines(2024, 0) }
+class Day01 {
+    private val data by lazy { resourceLines(2018, 1) }
 
     fun part1(): Int {
         var counter = 0
@@ -51,7 +51,7 @@ class Day00 {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val day = Day00()
+            val day = Day01()
             day.solve()
         }
     }
