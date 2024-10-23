@@ -1,22 +1,22 @@
 package net.dill.y2018
 
+import net.dill.Day
 import net.dill.resourceLines
 
-class Day01 {
+class Day01 : Day() {
     private val data by lazy { resourceLines(2018, 1) }
 
-    fun part1(): Int {
+    override fun part1(): Int {
         var counter = 0
 
         data.forEach {
             counter += it.toInt()
         }
 
-        println(counter)
         return counter
     }
 
-    fun part2(): Int? {
+    override fun part2(): Int? {
         var counter = 0
         val map = mutableMapOf<Int, Int>()
         var found: Int? = null
@@ -39,20 +39,13 @@ class Day01 {
             }
         }
 
-        println(found)
         return found
-    }
-
-    fun solve() {
-        part1()
-        part2()
     }
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val day = Day01()
-            day.solve()
+            run(Day01())
         }
     }
 }

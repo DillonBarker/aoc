@@ -1,11 +1,12 @@
 package net.dill.y2018
 
+import net.dill.Day
 import net.dill.resourceLines
 
-class Day02 {
+class Day02 : Day() {
     private val data by lazy { resourceLines(2018, 2) }
 
-    fun part1(): Int {
+    override fun part1(): Int {
         var twice = 0
         var thrice = 0
         data.forEach {
@@ -32,11 +33,10 @@ class Day02 {
             }
         }
 
-        println(twice * thrice)
         return twice * thrice
     }
 
-    fun part2(): String {
+    override fun part2(): String {
         val len = data.size
         var answer = ""
 
@@ -54,7 +54,6 @@ class Day02 {
                 }
         }
 
-        println(answer)
         return answer
     }
 
@@ -77,15 +76,10 @@ class Day02 {
         return Pair(null, null)
     }
 
-    fun solve() {
-        part1()
-        part2()
-    }
-
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            Day02().solve()
+            run(Day02())
         }
     }
 }
