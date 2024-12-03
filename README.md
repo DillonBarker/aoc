@@ -2,7 +2,7 @@
 
 Solutions to advent of code, written in Kotlin.
 
-## Run a day
+## Run a year
 
 ```shell
 ./gradlew y2024
