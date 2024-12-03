@@ -1,6 +1,8 @@
 package net.dill
 
 abstract class Day() {
+    protected open val data: List<String> by lazy { emptyList() }
+
     abstract fun part1(): Any?
     abstract fun part2(): Any?
 

@@ -3,8 +3,8 @@ package net.dill.y2024
 import net.dill.Day
 import net.dill.resourceLines
 
-class Day03: Day() {
-    private val data by lazy { resourceLines(2024, 3) }
+open class Day03: Day() {
+    override val data by lazy { resourceLines(2024, 3) }
 
     override fun part1(): Int {
         val input = data[0]

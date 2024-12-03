@@ -4,7 +4,7 @@ import net.dill.Day
 import net.dill.resourceLines
 
 class Day02 : Day() {
-    private val data by lazy { resourceLines(2018, 2) }
+    override val data by lazy { resourceLines(2018, 2) }
 
     override fun part1(): Int {
         var twice = 0

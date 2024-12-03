@@ -4,7 +4,7 @@ import net.dill.Day
 import net.dill.resourceLines
 
 class DayTemplate: Day() {
-    private val data by lazy { resourceLines(2024, 0) }
+    override val data by lazy { resourceLines(2024, 0) }
 
     override fun part1(): Int {
         return 0
