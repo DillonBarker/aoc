@@ -7,13 +7,13 @@ internal class Day03Test {
     fun `should solve part1`() {
         val day = Day03()
 
-        assert(true)
+        assert(day.part1() == 161)
     }
 
     @Test
     fun `should solve part2`() {
         val day = Day03()
 
-        assert(true)
+        assert(day.part2() == 173)
     }
 }
