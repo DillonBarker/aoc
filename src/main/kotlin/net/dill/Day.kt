@@ -1,5 +1,8 @@
 package net.dill
 
+import kotlin.system.measureNanoTime
+import kotlin.system.measureTimeMillis
+
 abstract class Day() {
     protected open val data: List<String> by lazy { emptyList() }
 
@@ -7,8 +10,19 @@ abstract class Day() {
     abstract fun part2(): Any?
 
     open fun solve() {
-        println("Part 1: ${part1()}")
-        println("Part 2: ${part2()}")
+        println("┌───────────┬────────────────┬─────────────┐")
+        println("│   Part    │    Result      │  Time (ns)  │")
+        println("├───────────┼────────────────┼─────────────┤")
+
+        val part1Result = part1()
+        val part1Time = measureNanoTime { part1() }
+        println("│     1     │ %-14d │ %-11d │".format(part1Result, part1Time))
+
+        val part2Result = part2()
+        val part2Time = measureNanoTime { part2() }
+        println("│     2     │ %-14d │ %-11d │".format(part2Result, part2Time))
+
+        println("└───────────┴────────────────┴─────────────┘")
     }
 
     companion object {
