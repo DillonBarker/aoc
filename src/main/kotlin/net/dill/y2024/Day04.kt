@@ -180,7 +180,6 @@ open class Day04: Day() {
 
                 if (y != 0 && y != grid.size - 1 && index != 0 && index != row.size - 1) {
                     if (char == 'A') {
-                        // LOOK AT TOP LEFT AND BOTTOM RIGHT
                         if (grid[y - 1][index - 1] == 'M') {
                             if (grid[y + 1][index + 1] == 'S') {
                                 firstXmas = true
@@ -190,7 +189,6 @@ open class Day04: Day() {
                                 firstXmas = true
                             }
                         }
-                        // LOOK AT TOP RIGHT TO BOTTOM LEFT
                         if (grid[y - 1][index + 1] == 'M') {
                             if (grid[y + 1][index - 1] == 'S') {
                                 secondXmas = true
