@@ -47,8 +47,46 @@ open class Day04: Day() {
                     }
                 }
             }
+        }
 
+        return count
+    }
 
+    override fun part2(): Int {
+        var count = 0
+
+        val grid: List<List<Char>> = data.map { it.toList() }
+
+        grid.forEachIndexed { y, row ->
+            row.forEachIndexed { index, char ->
+                var firstXmas = false
+                var secondXmas = false
+
+                if (y != 0 && y != grid.size - 1 && index != 0 && index != row.size - 1) {
+                    if (char == 'A') {
+                        if (grid[y - 1][index - 1] == 'M') {
+                            if (grid[y + 1][index + 1] == 'S') {
+                                firstXmas = true
+                            }
+                        } else if (grid[y - 1][index - 1] == 'S') {
+                            if (grid[y + 1][index + 1] == 'M') {
+                                firstXmas = true
+                            }
+                        }
+                        if (grid[y - 1][index + 1] == 'M') {
+                            if (grid[y + 1][index - 1] == 'S') {
+                                secondXmas = true
+                            }
+                        } else if (grid[y - 1][index + 1] == 'S') {
+                            if (grid[y + 1][index - 1] == 'M') {
+                                secondXmas = true
+                            }
+                        }
+                    }
+                }
+
+                if (firstXmas && secondXmas) count++
+            }
         }
 
         return count
@@ -166,50 +204,6 @@ open class Day04: Day() {
         }
 
         return false
-    }
-
-    override fun part2(): Int {
-        var count = 0
-
-        val grid: List<List<Char>> = data.map { it.toList() }
-
-        grid.forEachIndexed { y, row ->
-            row.forEachIndexed { index, char ->
-                var firstXmas = false
-                var secondXmas = false
-
-                if (y != 0 && y != grid.size - 1 && index != 0 && index != row.size - 1) {
-                    if (char == 'A') {
-                        if (grid[y - 1][index - 1] == 'M') {
-                            if (grid[y + 1][index + 1] == 'S') {
-                                firstXmas = true
-                            }
-                        } else if (grid[y - 1][index - 1] == 'S') {
-                            if (grid[y + 1][index + 1] == 'M') {
-                                firstXmas = true
-                            }
-                        }
-                        if (grid[y - 1][index + 1] == 'M') {
-                            if (grid[y + 1][index - 1] == 'S') {
-                                secondXmas = true
-                            }
-                        } else if (grid[y - 1][index + 1] == 'S') {
-                            if (grid[y + 1][index - 1] == 'M') {
-                                secondXmas = true
-                            }
-                        }
-                    }
-                }
-
-                if (firstXmas && secondXmas) {
-                    count++
-                }
-            }
-
-
-        }
-
-        return count
     }
 
     companion object {

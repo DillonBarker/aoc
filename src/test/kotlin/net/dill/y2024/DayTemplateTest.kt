@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Test
 
 internal class DayTemplateTest {
     @Test
-    fun `should solve part1`() {
+    fun testSolvePart1() {
         val day = DayTemplate()
 
         assert(true)
     }
 
     @Test
-    fun `should solve part2`() {
+    fun testSolvePart2() {
         val day = DayTemplate()
 
         assert(true)

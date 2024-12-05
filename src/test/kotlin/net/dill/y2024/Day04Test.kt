@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 internal class Day04Test {
     @Test
-    fun solvePart1A() {
+    fun testPart1SmallInput() {
         val day = object : Day04() {
             override val data by lazy { resourceLines(2024, 4, "a") }
         }
@@ -13,7 +13,7 @@ internal class Day04Test {
     }
 
     @Test
-    fun solvePart1B() {
+    fun testPart1LargeInput() {
         val day = object : Day04() {
             override val data by lazy { resourceLines(2024, 4, "b") }
         }
@@ -21,20 +21,18 @@ internal class Day04Test {
     }
 
     @Test
-    fun solvePart2A() {
+    fun testPart2SmallInput() {
         val day = object : Day04() {
             override val data by lazy { resourceLines(2024, 4, "c") }
         }
-
         assert(day.part2() == 1)
     }
 
     @Test
-    fun solvePart2B() {
+    fun testPart2LargeInput() {
         val day = object : Day04() {
             override val data by lazy { resourceLines(2024, 4, "d") }
         }
-
         assert(day.part2() == 9)
     }
 }

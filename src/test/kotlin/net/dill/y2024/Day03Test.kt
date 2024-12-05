@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 internal class Day03Test {
     @Test
-    fun `should solve part1`() {
+    fun testPart1() {
         val day = object : Day03() {
             override val data by lazy { resourceLines(2024, 3, "a") }
         }
@@ -14,7 +14,7 @@ internal class Day03Test {
     }
 
     @Test
-    fun `should solve part2`() {
+    fun testPart2() {
         val day = object : Day03() {
             override val data by lazy { resourceLines(2024, 3, "b") }
         }
