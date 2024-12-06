@@ -7,13 +7,13 @@ internal class DayTemplateTest {
     fun testSolvePart1() {
         val day = DayTemplate()
 
-        assert(true)
+        assert(day.part1() == 0)
     }
 
     @Test
     fun testSolvePart2() {
         val day = DayTemplate()
 
-        assert(true)
+        assert(day.part2() == 0)
     }
 }
