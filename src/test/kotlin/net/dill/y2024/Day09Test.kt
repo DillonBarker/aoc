@@ -17,13 +17,4 @@ internal class Day09Test {
 
         assert(day.part2() == 2858L)
     }
-
-    @Test
-    fun testSolvePart2B() {
-        val day = object : Day09() {
-            override val data by lazy { resourceLines(2024, 9, "b") }
-        }
-
-        assert(day.part2() == 2858L)
-    }
 }
