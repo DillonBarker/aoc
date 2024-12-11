@@ -43,6 +43,13 @@ years.forEach { year ->
     }
 }
 
+tasks.register("printHeapSettings") {
+    doLast {
+        println("Maximum Heap Size: " + Runtime.getRuntime().maxMemory() / (1024 * 1024) + " MB")
+        println("Initial Heap Size: " + Runtime.getRuntime().totalMemory() / (1024 * 1024) + " MB")
+    }
+}
+
 tasks.register("createDay") {
     val year = project.findProperty("year") as? String ?: throw GradleException("Year is not specified")
     val day = project.findProperty("day") as? String ?: throw GradleException("Day is not specified")

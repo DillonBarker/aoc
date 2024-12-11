@@ -1,6 +1,5 @@
 package net.dill.y2024
 
-import net.dill.resourceLines
 import org.junit.jupiter.api.Test
 
 internal class Day09Test {

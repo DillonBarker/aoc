@@ -33,27 +33,6 @@ open class Day10: Day() {
         return score
     }
 
-    private fun findPaths(grid: List<List<Char>>, starts: List<Pair<Int, Int>>, char: Char): List<Pair<Int, Int>> {
-        val paths = mutableListOf<Pair<Int, Int>>()
-
-        starts.forEach { (x, y) ->
-            if (y != 0) {
-                if (grid[y-1][x] == char) paths.add(Pair(x, y-1))
-            }
-            if (x != 0) {
-                if (grid[y][x-1] == char) paths.add(Pair(x-1, y))
-            }
-            if (x != grid[0].size - 1) {
-                if (grid[y][x+1] == char) paths.add(Pair(x+1, y))
-            }
-            if (y != grid.size - 1) {
-                if (grid[y+1][x] == char) paths.add(Pair(x, y+1))
-            }
-        }
-
-        return paths
-    }
-
     override fun part2(): Int {
         var sumOfRating = 0
         val grid: List<List<Char>> = data.map { it.toList() }
@@ -79,6 +58,27 @@ open class Day10: Day() {
         }
 
         return sumOfRating
+    }
+
+    private fun findPaths(grid: List<List<Char>>, starts: List<Pair<Int, Int>>, char: Char): List<Pair<Int, Int>> {
+        val paths = mutableListOf<Pair<Int, Int>>()
+
+        starts.forEach { (x, y) ->
+            if (y != 0) {
+                if (grid[y-1][x] == char) paths.add(Pair(x, y-1))
+            }
+            if (x != 0) {
+                if (grid[y][x-1] == char) paths.add(Pair(x-1, y))
+            }
+            if (x != grid[0].size - 1) {
+                if (grid[y][x+1] == char) paths.add(Pair(x+1, y))
+            }
+            if (y != grid.size - 1) {
+                if (grid[y+1][x] == char) paths.add(Pair(x, y+1))
+            }
+        }
+
+        return paths
     }
 
     companion object {
