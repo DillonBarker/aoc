@@ -16,7 +16,7 @@ tasks.test {
     useJUnitPlatform()
 }
 
-val years = listOf(2018, 2024)
+val years = listOf(2018, 2024, 2025)
 
 years.forEach { year ->
     sourceSets.main.get().kotlin.matching {
@@ -47,6 +47,72 @@ tasks.register("printHeapSettings") {
     doLast {
         println("Maximum Heap Size: " + Runtime.getRuntime().maxMemory() / (1024 * 1024) + " MB")
         println("Initial Heap Size: " + Runtime.getRuntime().totalMemory() / (1024 * 1024) + " MB")
+    }
+}
+
+tasks.register("createYear") {
+    val year = project.findProperty("year") as? String ?: throw GradleException("Year is not specified")
+
+    val sourceDir = file("src/main/kotlin/net/dill/y$year")
+    val testSourceDir = file("src/test/kotlin/net/dill/y$year")
+    val mainResourceDir = file("src/main/resources/$year")
+    val testResourceDir = file("src/test/resources/$year")
+
+    doLast {
+        sourceDir.mkdirs()
+        testSourceDir.mkdirs()
+        mainResourceDir.mkdirs()
+        testResourceDir.mkdirs()
+
+        val templateFile = File(sourceDir, "DayTemplate.kt")
+        templateFile.writeText("""package net.dill.y$year
+
+import net.dill.Day
+import net.dill.resourceLines
+
+open class DayTemplate: Day() {
+    override val data by lazy { resourceLines($year, 0) }
+
+    override fun part1(): Int {
+        return 0
+    }
+
+    override fun part2(): Int {
+        return 0
+    }
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            run(DayTemplate())
+        }
+    }
+}
+""")
+
+        val testTemplateFile = File(testSourceDir, "DayTemplateTest.kt")
+        testTemplateFile.writeText("""package net.dill.y$year
+
+import org.junit.jupiter.api.Test
+
+internal class DayTemplateTest {
+    @Test
+    fun testSolvePart1() {
+        val day = DayTemplate()
+
+        assert(day.part1() == 0)
+    }
+
+    @Test
+    fun testSolvePart2() {
+        val day = DayTemplate()
+
+        assert(day.part2() == 0)
+    }
+}
+""")
+
+        println("Created year structure for $year")
     }
 }
 

@@ -8,6 +8,12 @@ Solutions to advent of code, written in Kotlin.
 ./gradlew y2024
 ```
 
+## Create a year
+
+```shell
+./gradlew createYear -Pyear=2025
+```
+
 ## Create a day
 
 ```shell
