@@ -116,6 +116,19 @@ internal class DayTemplateTest {
     }
 }
 
+tasks.register("runDay") {
+    group = "advent"
+    description = "Run a specific day for a specific year. Usage: ./gradlew runDay -Pyear=2025 -Pday=1"
+
+    val year = project.findProperty("year") as? String ?: throw GradleException("Year is not specified. Use -Pyear=YYYY")
+    val day = project.findProperty("day") as? String ?: throw GradleException("Day is not specified. Use -Pday=N")
+
+    val formattedDay = day.padStart(2, '0')
+    val taskName = "y${year}runDay$formattedDay"
+
+    dependsOn(taskName)
+}
+
 tasks.register("createDay") {
     val year = project.findProperty("year") as? String ?: throw GradleException("Year is not specified")
     val day = project.findProperty("day") as? String ?: throw GradleException("Day is not specified")
