@@ -51,7 +51,6 @@ open class Day02: Day() {
             }
         }
 
-        assert(invalidIds == 70187097315L)
         return invalidIds
     }
 

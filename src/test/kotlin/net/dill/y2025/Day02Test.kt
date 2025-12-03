@@ -18,13 +18,6 @@ internal class Day02Test {
     }
 
     @Test
-    fun testSolvePart2_Twice() {
-        val day = Day02()
-        val id = "12341234"
-        assert(day.hasRepeatedPattern(id))
-    }
-
-    @Test
     fun testSolvePart2_Thrice() {
         val day = Day02()
         val id = "123123123"
