@@ -41,8 +41,8 @@ open class Day04: Day() {
         val grid: MutableList<MutableList<Char>> = data.map { it.toMutableList() } as MutableList<MutableList<Char>>
 
         var totalRolls = 0
-        var canRoll = true
-        while (canRoll) {
+        var more = true
+        while (more) {
             var rollsThisIteration = 0
             grid.forEachIndexed { y, row ->
                 row.forEachIndexed { x, char ->
@@ -68,7 +68,7 @@ open class Day04: Day() {
                 }
             }
             if (rollsThisIteration == 0) {
-                canRoll = false
+                more = false
             }
             totalRolls += rollsThisIteration
         }
